@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Followed https://www.youtube.com/watch?v=j59qQ7YWLxw tutorial to learn Javascript -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> <!-- specify character encoding -->
+        <!-- viewport is visible area; content sets width and scaling -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- specify edge mode for internet explorer -->
+        <title>Calculator</title>
+        <link rel="stylesheet" href="styles.css"> <!-- link to external css style sheet that formats HTML -->
+        <script src="script.js" defer></script> <!-- defer: loads after whole page is parsed -->
+    </head>
+    <body>
+        <div class="calculator-grid">
+            <div class="output">
+                <div class="previous-operand"></div> <!-- previously typed operand -->
+                <div class="current-operand"></div>
+            </div>
+            <button class="span-two">AC</button> <!-- button named AC for all clear -->
+            <!-- AC has own class bc extra big button -->
+            <button>DEL</button>
+            <button>/</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>*</button> <!-- buttons go left to right, so this row is 1 2 3 * -->
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>+</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>-</button>
+            <button>.</button>
+            <button>0</button>
+            <button>=</button>
+            <button class="span-two">=</button>
+        </div>
+    </body>
+</html>
