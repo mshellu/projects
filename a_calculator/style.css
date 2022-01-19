@@ -1,0 +1,72 @@
+/* select all elements using " * " */
+/* *::before means before all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: monospace, sans-serif;
+    /* default to sans-serif if first font stated not found */
+    font-weight: normal;
+}
+
+/* background */
+body {
+    padding: 0; /* background fills entire screen */
+    margin: 0;
+    background: linear-gradient(to bottom, #160624e3, #666ba1);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center; /* align-items: separate buttons, align-content: buttons packed together */
+    /* want to fill entire height (100% of height) so do: */
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px); /* four columns 100 pixels wide */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    /* minmax says minimum row size 120 px, and if it needs to grow larger */
+    /* then automatically grow row larger (eg putting in extra numbers) */
+}
+
+/* position and define buttons */
+.calculator-grid > button {
+    cursor: pointer; /* specify cursor style over button. here cursor have pointer image */
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75); /* opaque white */
+}
+
+.calculator-grid > button:hover { /* changes color of button when mouse hovers over it */
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two { /* class for buttons that span two columns */
+    grid-column: span 2;
+}
+
+.output { /* defining class output */
+    grid-column: 1 / -1; /* from column 1 to column -1 (aka last column) */
+    /* this fills entire top row */
+    background-color: rgba(0, 0, 0, .50);
+    /* align elements inside container using flex */
+    display: flex;
+    /* elements previously by default on top left, vertically aligned */
+    /* now they're spread out horizontally, but still top left */
+    align-items: flex-end; /* align items inside container to right */
+    justify-content: space-around; /* distribute items evenly */
+    /* but we get a weird gap in the input text sometimes, so do */
+    flex-direction: column;
+    padding: 10px;
+    /* notice if output is too long it will wrap around the black container, so do */
+    word-wrap: break-word; /* can split in middle of a word to wrap */
+    word-break: break-all; /* break all words */
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem; /* rem: root em; initial value of font-size; 1rem = 16px */
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem; 
+}

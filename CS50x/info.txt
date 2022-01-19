@@ -1,0 +1,1 @@
+This folder contains all projects done in CS50x. Note that part of the project code was provided by the course.
